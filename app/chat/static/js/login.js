@@ -26,7 +26,7 @@ const BOT_MSGS = [
   "I feel sleepy! :("
 ];
 
-var socket = io.connect('http://127.0.0.1:5000');
+var socket = io.connect('https://mowa.onrender.com');
 
 // Icons made by Freepik from www.flaticon.com
 const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
