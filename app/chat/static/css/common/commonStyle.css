@@ -1,0 +1,458 @@
+:root {
+  --app-body-text-color: #212121;
+  --app-light-text-color: #878787;
+  --app-primary-color: #ea6c41;
+  /* --app-primary-color: #001F41; */
+  --app-secondary-color: #ffd800;
+  --app-primary-light-color: #84939E;
+  --app-main_bg-color: #f0f4f5;
+  --app-header-text-color: #878787;
+  --form-ele-text-color: #495057;
+  --copyright-strip-color: #0066A3;
+  --table-header-strip-color: #0066A3;
+  --modal-header-strip-color: #0066A3;
+  --primary-btn-color: #2196f3;
+  --primary-btn-hover-color: rgba(234, 108, 65, 0.85);
+  --secondary-btn-color: #dc4666;
+  --secondary-btn-hover-color: rgba(220, 70, 102, 0.85);
+  --primary-highlight-btn-color: #0066A3;
+  --primary-highlight-btn-hover-color: #025f96;
+  --sideMenu-header-bg-color: #B98945;
+  --btn-dark-brown: #97641c;
+  --header-bg-color: #001F41;
+  --sideMenu-bg-color: #3b4650;
+  --selected-menuItem-color: #ea6c41;
+  --content-area-color: #ebeff2;
+  --secondary-app-color: #428bca;
+  --divider-line-color: #134a8f;
+}
+
+
+.fs-12 {
+  font-size: 12px !important;
+}
+.fs-14 {
+  font-size: 14px !important;
+}
+.fs-16 {
+  font-size: 16px !important;
+}
+.fs-18 {
+  font-size: 18px !important;
+}
+.fs-20 {
+  font-size: 20px !important;
+}
+.fs-22 {
+  font-size: 22px !important;
+}
+.fs-24 {
+  font-size: 24px !important;
+}
+
+
+.mtb-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.mlr-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.m-t-8 {
+  margin-top: 8px !important;
+}
+
+.plr-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 0px;
+}
+.row .col {
+  padding: 0 15px;
+}
+.necessaray-fiedls{
+ color: red;
+}
+small.error_msg {
+  color: indianred;
+  font-size: 15px;
+}
+.primary-app-btn {
+  border: 2px solid var(--primary-btn-color);
+  border-radius: 20px;
+  color: white !important;
+  text-transform: capitalize;
+  /* font-family: OpenSans-Regular; */
+  z-index: 0;
+}
+.secondary-app-btn {
+  background-color: var(--secondary-btn-color);
+  color: white !important;
+  text-transform: capitalize;
+  /* font-family: OpenSans-Regular; */
+  z-index: 0;
+}
+.secondary-app-btn:hover {
+  background-color: var(--secondary-btn-hover-color);
+  color: white !important;
+}
+
+
+.btn_cstm_status {
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 1px 0px;
+  height: 28px;
+  line-height: 24px;
+  text-transform: none;
+  font-size: 14px;
+}
+.btn-success.btn_cstm_status {
+  background-color: mediumseagreen !important;
+  border-color: mediumseagreen !important;
+}
+.btn-danger.btn_cstm_status {
+  background-color: indianred !important;
+  border-color: indianred !important;
+}
+
+/***********************************************
+       Bootstrap Confirmation CSS Starting 
+***********************************************/
+.popover.confirmation .popover-header {
+  margin-top: 0px;
+  font-weight: 500;
+}
+.popover.confirmation .btn-group .btn-primary {
+  color: white;
+  background-color: mediumseagreen;
+  border-color: mediumseagreen;
+  min-width: 100px;
+}
+.popover.confirmation .btn-group .btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+/***********************************************
+       Bootstrap Confirmation CSS Ending 
+***********************************************/
+
+
+
+/*************************************
+       dataTables CSS STARTING 
+*************************************/
+td.dataTables_empty {
+  padding: 100px 10px !important;
+}
+.dataTables_filter {
+  display: none;
+}
+.dataTables_wrapper .dataTables_filter input {
+  margin-left: 0px;
+}
+.table-bordered th, .table-bordered td {
+  border: 1px solid #dee2e6;
+}
+thead.strip {
+  /* font-family: Lato-SemiBold; */
+  /* background-color: var(--app-primary-light-color); */
+  background-color: var(--table-header-strip-color);
+  color: white;
+}
+table.dataTable {
+  border-bottom: 1px solid black;
+}
+table.dataTable tbody {
+  background-color: white;
+}
+table thead th, 
+table tfoot th, 
+table.dataTable thead th, 
+table.dataTable tfoot th {
+  font-weight: normal;
+}
+tr.group, tr.group:hover {
+  background-color: #c5e0ff !important;
+}
+td .tableActionBtn {
+  padding: 2px 8px;
+  color: black;
+  font-size: 18px;
+}
+.dataTables_wrapper .dataTables_processing {
+  color: #212529;
+}
+/*************************************
+       dataTables CSS ENDING 
+*************************************/
+.input-group-addon span {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color:#000;
+    /* z-index: 3; */
+}
+/*************************************
+       modal CSS STARTING 
+*************************************/
+
+.modal.customModal {
+  color: var(--app-body-text-color);
+}
+
+#successmodal .modalStatusIconHeader, 
+#conformationmodal .modalStatusIconHeader {
+  background: #47c9a2;
+}
+#errormodal .modalStatusIconHeader {
+  background: indianred;
+}
+.modalStatusIconHeader {
+  border-bottom: none;
+  position: relative;
+  text-align: center;
+  padding: 14px 25px;
+}
+.modalStatusIconHeader .icon-box {
+  color: #fff;
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  padding: 9px;
+  text-align: center;
+  font-size: 24px;
+}
+#successmodal .modalStatusIconHeader .icon-box .material-icons, 
+#conformationmodal .modalStatusIconHeader .icon-box .material-icons {
+  font-size: 49px;
+  margin: -4px 0 0 -3px;
+}
+#errormodal .modalStatusIconHeader .icon-box .material-icons {
+  font-size: 35px;
+  /* margin: -4px 0 0 -4px; */
+}
+.modal .modal-header .close {
+  font-size: 1.5rem !important;
+}
+.modal .modal-content .modalStatusHeader .right-modal-close {
+  top: 3px;
+  right: 23px;
+  font-size: 18px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#modal_conformation .m_message {
+  line-height: unset;
+}
+
+#conformationmodal .conformation_btn_no, 
+#conformationmodal .conformation_btn_yes {
+  height: 30px;
+  padding: 2px 15px;
+  float: right;
+  margin: 8px;
+}
+/*************************************
+       modal CSS ENDING 
+*************************************/
+
+
+/*************************************
+      My Profile CSS
+*************************************/
+.preview-bold-text {
+  font-size: 13px;
+  /* font-weight: 600; */
+  font-family: Roboto-Medium;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #929292;
+}
+.preview-bold-heading {
+  font-size: 1.0rem;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.showOnPreview {
+  display: none;
+  color: black !important;
+}
+.previewCls .showOnPreview {
+  display: inherit;
+}
+.previewCls label.formControlLabel.showOnPreview {
+  border: 1px solid #ced4da;
+  line-height: 1.5;
+  padding: .375rem .75rem;
+  background-color: #e9ecef;
+  border-radius: .25rem;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.previewCls .hideOnPreview {
+  display: none !important;
+}
+/*************************************
+        ENDING 
+
+*************************************/
+
+.democls{
+   font-size: 19px;
+    font-weight: bold;
+    vertical-align: middle;
+    padding-top: 14px;
+}
+
+
+
+/************************************************************************
+                       multiselect CSS  -- Start
+************************************************************************/
+.multiselect-native-select .btn-group {
+  width: 100%;
+  height: 40px;
+}
+.multiselect-native-select .multiselect-container.dropdown-menu {
+  width: 100%;
+}
+.multiselect-container.dropdown-menu > li > a{
+  padding: 2px;
+}
+.multiselect-container.dropdown-menu {
+  background-color: #fff;
+  width: 100%;
+}
+.multiselect-container label.checkbox:hover{
+  color: #00afd1;
+}
+.multiselect-native-select .multiselect.btn-default{
+  color: #333;
+  width: 100%;
+  /* height: 40px; */
+  border-radius: 5px !important;
+  padding: 8px 10px;
+  text-align: left;
+  border : 1px solid #d3d8dd;
+}
+.multiselect-native-select .multiselect .multiselect-selected-text{
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  width: CALC(100% - 15px);
+  display:inline-block;
+}
+.multiselect-container.dropdown-menu>.active>a, .multiselect-container.dropdown-menu>.active>a:focus, .multiselect-container.dropdown-menu>.active>a:hover {
+  color: #333;
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+}
+.multiselect-container.dropdown-menu label{
+  text-align: left;
+}
+/************************************************************************
+                     multiselect CSS  -- End
+************************************************************************/
+/**************************************************
+          Validation Styles STARTING
+**************************************************/
+/*-- Placeholder changing color --*/
+
+/* .placeholderred::-webkit-input-placeholder {
+  color: red !important;
+}
+.placeholderred:-moz-placeholder {
+  color: red !important;
+}
+.placeholderred::-moz-placeholder {
+  color: red !important;
+}
+.placeholderred:-ms-input-placeholder {
+  color: red !important;
+} */
+.placeholderred {
+  border-color: indianred !important;
+}
+
+.removeImageFile {
+  font-size: 12px;
+  color: red;
+}
+/**************************************************
+          Validation Styles ENDING
+**************************************************/
+
+.viewOnly button, .viewOnly input, .viewOnly optgroup, .viewOnly select, .viewOnly textarea {
+  color: #000 !important;
+  pointer-events: none !important;
+  border: 1px solid #ced4da !important;
+  background-color: #e9ecef !important;
+}
+
+/*************************************
+       Loader CSS STARTING 
+*************************************/
+.loaderDiv {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.16);
+  z-index: 9999;
+}
+.loader {
+  border: 5px solid #f3f3f3;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  border-top: 5px solid #555;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*************************************
+       Loader CSS ENDING 
+*************************************/
+
+
+/*************************************
+  Radio Buttons Control CSS STARTING
+*************************************/
+.radioBtnControl > label {
+  margin-right: 30px;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+.radioBtnControl.form-control{
+  border: none;
+}
+/*************************************
+  Radio Buttons Control CSS ENDING
+*************************************/
+

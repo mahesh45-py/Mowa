@@ -1,0 +1,67 @@
+/**************************************************
+       Dashboard Cards Css Starting
+**************************************************/
+.bg-c-light-slateblue {
+  background: linear-gradient(45deg,#6A5ACD,#6A5ACD);
+}
+
+.bg-c-light-dodgerblue {
+  background: linear-gradient(45deg,#1E90FF,#1E90FF);
+}
+.bg-c-light-teal {
+  background: linear-gradient(45deg,#008080,#008080);
+}
+
+	
+.bg-c-light-seagreen {
+  background: linear-gradient(45deg,#2E8B57,#2E8B57);
+}
+
+.bg-c-light-darkslategray {
+  background: linear-gradient(45deg,#00BFFF,#00BFFF);
+}
+
+.bg-c-blue {
+  background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+  background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+  background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+  background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+.bg-c-light-green {
+  background: linear-gradient(45deg,#86d03d,#9ed964);
+}
+.bg-c-light-pink {
+  background: linear-gradient(45deg,#cc66cc,#d685d6);
+}
+.bg-c-violet {
+  background: linear-gradient(45deg,#6e67ff,#8b85ff);
+}
+.bg-c-orange {
+  background: linear-gradient(45deg,#f0746b,#f88f87);
+}
+.bg-c-dark-orange{
+  background: linear-gradient(45deg,#ef5048,#ff9980);
+}
+.bg-c-dark-blue{
+  background: linear-gradient(45deg,#4a75fe,#99b3ff);
+}
+
+.bg-c-dark-green{
+  background: linear-gradient(45deg,#48a54e,#80cc99);
+}
+.bg-c-dark-primary{
+  background: linear-gradient(45deg,#224a92,#224a92bf);
+}
+/**************************************************
+       Dashboard Cards Css Ending
+**************************************************/
