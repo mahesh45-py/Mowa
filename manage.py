@@ -60,8 +60,10 @@ def setup_logger():
 
 
 setup_logger()
-
+import eventlet
+import eventlet.wsgi
+eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
 
 # if __name__ == '__main__':
-#     # app.run(debug=True,host='0.0.0.0')
-#     socketio.run(app)
+    # app.run(debug=True,host='0.0.0.0')
+    # socketio.run(app)
