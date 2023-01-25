@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from flask_restful import Resource, Api
-from app.database import socketio
+from app.database import socketio,oAuth
+
 chat = Blueprint('chat',__name__,static_folder='static',template_folder='templates')
 
 chat_bp = Api(chat)

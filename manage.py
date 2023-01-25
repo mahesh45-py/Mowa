@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request, url_for
 from app.api import api_bp
 from app.chat import chat
-from app.database import db, mail, migrate, jsglue, socketio
+from app.database import db, mail, migrate, jsglue, socketio, oAuth
 import logging.handlers
 
 
@@ -25,11 +25,18 @@ app.config['MAIL_USE_SSL'] = False
 app.config['SECRET_KEY'] = 'secret!'
 
 
+
+
+
 db.init_app(app)
 migrate.init_app(app,db)
 mail.init_app(app)
 jsglue.init_app(app)
 socketio.init_app(app)
+oAuth.init_app(app)
+
+
+
 
 app.register_blueprint(api_bp)
 app.register_blueprint(chat)
