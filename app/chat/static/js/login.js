@@ -25,7 +25,8 @@ const BOT_MSGS = [
   "Sorry if my answers are not relevant. :))",
   "I feel sleepy! :("
 ];
-var baseURL = 'http://192.168.65.230:5000'
+// var baseURL = 'http://192.168.65.230:5000'
+var baseURL = 'https://mowa.onrender.com'
 // var socket = io.connect('https://mowa.onrender.com');
 // var socket = io.connect('http://192.168.65.230:5000');
 
