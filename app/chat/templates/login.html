@@ -30,6 +30,11 @@
 </section>
 
 <script src="https://cdn.socket.io/4.5.4/socket.io.min.js" integrity="sha384-/KNQL8Nu5gCHLqwqfQjA689Hhoqgi2S84SNUxC3roTe4EhJ9AfLkp8QiQcU8AMzI" crossorigin="anonymous"></script>
-  <script src="{{ url_for('chat.static', filename='js/login.js') }}"></script>
+  
+
+
 
 {% endblock %}
+{% block scripts %}
+<script src="{{ url_for('chat.static', filename='js/login.js') }}"></script>
+{% endblock %} 

@@ -3,14 +3,14 @@ const msgerInput = get(".msger-input");
 const msgerChat = get(".msger-chat");
 
 
-function getName(){
-  var name = localStorage.getItem('mowaPeru',name)
-  while(!name){
+function getName() {
+  var name = localStorage.getItem('mowaPeru', name)
+  while (!name) {
     name = prompt("ne peru enti mowa?")
-    if(name){
-      localStorage.setItem('mowaPeru',name)
+    if (name) {
+      localStorage.setItem('mowaPeru', name)
     }
-    
+
   }
   return name
 }
@@ -25,8 +25,9 @@ const BOT_MSGS = [
   "Sorry if my answers are not relevant. :))",
   "I feel sleepy! :("
 ];
-
-var socket = io.connect('https://mowa.onrender.com');
+var baseURL = 'http://192.168.65.230:5000'
+// var socket = io.connect('https://mowa.onrender.com');
+// var socket = io.connect('http://192.168.65.230:5000');
 
 // Icons made by Freepik from www.flaticon.com
 const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
@@ -40,13 +41,16 @@ msgerForm.addEventListener("submit", event => {
   const msgText = msgerInput.value;
   if (!msgText) return;
 
-  
-  msgerInput.value = "";
 
-  socket.emit( 'my event', {
-    user_name : getName(),
-    message : msgText
-  })
+  msgerInput.value = "";
+  if (getName()) {
+    postMessage(getName(), msgText)
+  }
+
+  // socket.emit( 'my event', {
+  //   user_name : getName(),
+  //   message : msgText
+  // })
 });
 
 function appendMessage(name, img, side, text) {
@@ -96,26 +100,95 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-socket.on( 'connect', function() {
-  socket.emit( 'my event', {
-    data: 'User Connected'
-  })
-  var form = $( 'form' ).on( 'submit', function( e ) {
-    e.preventDefault()
-    let user_name = $( 'input.username' ).val()
-    let user_input = $( 'input.message' ).val()
-    socket.emit( 'my event', {
-      user_name : user_name,
-      message : user_input
-    })
-    $( 'input.message' ).val( '' ).focus()
-  })
+// socket.on( 'connect', function() {
+//   socket.emit( 'my event', {
+//     data: 'User Connected'
+//   })
+//   var form = $( 'form' ).on( 'submit', function( e ) {
+//     e.preventDefault()
+//     let user_name = $( 'input.username' ).val()
+//     let user_input = $( 'input.message' ).val()
+//     socket.emit( 'my event', {
+//       user_name : user_name,
+//       message : user_input
+//     })
+//     $( 'input.message' ).val( '' ).focus()
+//   })
 
-  socket.on( 'my response', function( msg ) {
-    console.log( msg )
-    if( typeof msg.user_name !== 'undefined' ) {
-      var direction = msg.user_name == getName() ? "right" : "left";
-      appendMessage(msg.user_name,BOT_IMG, direction, msg.message)
+//   socket.on( 'my response', function( msg ) {
+//     console.log( msg )
+//     if( typeof msg.user_name !== 'undefined' ) {
+//       var direction = msg.user_name == getName() ? "right" : "left";
+//       appendMessage(msg.user_name,BOT_IMG, direction, msg.message)
+//     }
+//   })
+// })
+
+
+$(document).ready(function () {
+  getMessages()
+})
+var lastid = 0
+
+i=0
+
+
+var source = new EventSource(`/getNewMessages?i=${i}`);
+
+source.onmessage = function (e) {
+  var messages = JSON.parse(e.data ? e.data.replace(/'/g, '"'): []);
+  if(messages.length && messages[0].id>lastid){
+    
+    const i = messages.findIndex(o => o.id === lastid)
+    var newMessages = messages.slice(0,i)
+    newMessages.map((obj)=>{
+      var direction = obj.username == getName() ? "right" : "left";
+      appendMessage(obj.username, BOT_IMG, direction, obj.message)
+    })
+    lastid = messages[0].id
+  }
+
+};
+
+
+
+function getMessages() {
+  $.ajax({
+    method: 'GET',
+    url: `${baseURL}/record`,
+    success: function (response) {
+      displayMessaged(response.data)
+      if (response.data.length) {
+        lastid = response.data.slice(-1)[0].id
+      }
     }
   })
-})
+}
+
+function postMessage(user, message) {
+
+  $.ajax({
+    type: "POST",
+    url: `${baseURL}/record`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data: JSON.stringify({ username: user, message: message }),
+    contentType: 'application/json',
+    success: function (response) {
+      // Do something with the response
+      console.log(response);
+    },
+    error: function (xhr, status, error) {
+      console.log("Error: " + error);
+    }
+  });
+}
+
+function displayMessaged(data) {
+  data.map((obj) => {
+    var direction = obj.username == getName() ? "right" : "left";
+    appendMessage(obj.username, BOT_IMG, direction, obj.message)
+  })
+}
+

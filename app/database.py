@@ -4,13 +4,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_jsglue import JSGlue
 from flask_socketio import SocketIO
 from flask_oauthlib.client import OAuth
-
+from flask import Flask
+import os 
 db = SQLAlchemy()
 migrate = Migrate()
 mail = Mail()
 jsglue = JSGlue()
 socketio = SocketIO()
 oAuth = OAuth()
+app = Flask(__name__, static_folder='files')
 
 google_clientid = '342411463967-32od2l2nevkm6u8bnsnio6dch0rlfg6d.apps.googleusercontent.com'
 google_secret = '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'
@@ -30,3 +32,5 @@ google = oAuth.remote_app(
 baseUrl = "http://localhost:8080"
 # baseUrl = "http://192.168.41.230:5000"
 # baseUrl = "https://mahesh54.pythonanywhere.com"
+root_folder_path = os.path.abspath(os.path.dirname(__file__)).replace("\\app","")
+media_folder_path = root_folder_path+'\\media'

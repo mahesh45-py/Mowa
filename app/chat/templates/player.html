@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ 
+ 
+  {% block css %}
+ <link href="{{ url_for('chat.static', filename='css/login.css') }}" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
+  {% endblock %}
+  
+  
+ 
+{% block content %}	
+
+<h1>video</h1>
+  <img src="" id="img">
+
+  <script src="{{ url_for('chat.static', filename='js/player.js') }}"></script>
+
+{% endblock %}

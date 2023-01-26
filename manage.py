@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request, url_for
 from app.api import api_bp
 from app.chat import chat
-from app.database import db, mail, migrate, jsglue, socketio, oAuth
+from app.database import db, mail, migrate, jsglue, socketio, oAuth, app
 import logging.handlers
 
 
@@ -10,7 +10,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 file_path = os.path.join(basedir, 'files')
 database_path = os.path.join(basedir, 'data-dev.sqlite')
 
-app = Flask(__name__, static_folder='files')
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mowa.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.secret_key = '@Mahesh2085'
@@ -32,7 +32,7 @@ db.init_app(app)
 migrate.init_app(app,db)
 mail.init_app(app)
 jsglue.init_app(app)
-socketio.init_app(app)
+# socketio.init_app(app)
 oAuth.init_app(app)
 
 
@@ -60,10 +60,10 @@ def setup_logger():
 
 
 setup_logger()
-import eventlet
-import eventlet.wsgi
-eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
+# import eventlet
+# import eventlet.wsgi
+# eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
 
-# if __name__ == '__main__':
-    # app.run(debug=True,host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
     # socketio.run(app)
